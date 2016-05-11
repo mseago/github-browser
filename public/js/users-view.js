@@ -9,7 +9,6 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
   function loadUsers() {
     $.ajax('https://api.github.com/search/users?q=bob')
       .done(function(data) {
-        console.log('user data', data);
         createUserDOM(data.items);
       });
   }
@@ -21,9 +20,11 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
   }
 
   function userClicked() {
+    //If there is a previously chosen user, we want to unchose it
     var chosenItems = $('.user-list .chosen');
     chosenItems.removeClass('chosen');
 
+    //chooses the current user
     var $this = $(this);
     $this.addClass('chosen');
 
@@ -32,7 +33,7 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
   }
 
   function init(userClick) {
-    userClickCallback = userClick;
+    userClickCallback = userClick; //what we will call when someone clicks on a user.
     $userList = $('.user-list');
     loadUsers();
 

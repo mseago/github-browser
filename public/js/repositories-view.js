@@ -6,11 +6,8 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
   var $repositoryList;
 
   function loadRepos(repoUrl) {
-
-    //console.log(repoUrl, 'it happened yo');
     $.ajax(repoUrl)
       .done(function(data) {
-        //console.log('repo data', data);
         createDOM(data);
       });
   }
@@ -24,7 +21,6 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
 
     for (var repo of repositories) {
       var html = templateFunc(repo);
-//      console.log(html);
       $repositoryList.append(html);
     }
   }
