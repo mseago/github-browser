@@ -1,0 +1,41 @@
+@import 'reset';
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 10px 5px;
+}
+
+
+@import 'user-view';
+@import 'repository-view';
+
+
+
+.user-info {
+  float: left;
+  width: 70%;
+}
+
+
+.options {
+
+  overflow: auto;
+  padding: 5px;
+
+  div {
+    float: left;
+    outline: solid 1px #CCC;
+    padding: 2%;
+    width: 29.333333%;
+    text-align: center;
+  }
+
+  .chosen {
+    background-color: #000;
+    color: #FFF;
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Github Browser</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+
+  <body>
+
+    <header>
+      <h1>Github Browser</h1>
+    </header>
+
+    <section class="users">
+
+      <ul class="user-list">
+      </ul>
+
+    </section>
+
+    <section class="user-info">
+
+      <div class="options">
+        <div class="repositories-option">Repositories</div>
+        <div class="organizations-option">Organizations</div>
+        <div class="followers-option">Followers</div>
+      </div>
+
+      <div class="repositories" style="display: none;">
+
+        <ul class="repository-list">
+          <li class="repository">
+            <h2 class="repository-name">repo name</h2>
+            <p>Homepage: <a href="<%= homepage %>" target="_blank">home page</a></p>
+            <p>Github: <a href="<%= html_url %>" target="_blank">html url</a></p>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <div class="organizations" style="display: none;">
+
+        <ul class="organization-list">
+          <li>Org 1</li>
+          <li>Org 2</li>
+        </ul>
+
+      </div>
+
+      <div class="followers" style="display: none;">
+
+        <ul class="follower-list">
+          <li>Follower 1</li>
+          <li>Follower 2</li>
+          <li>Follower 3</li>
+          <li>Follower 4</li>
+          <li>Follower 5</li>
+          <li>Follower 6</li>
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <script type="text/html" id="repository-template">
+      <li class="repository">
+        <h2 class="repository-name"><%= name %></h2>
+        <p>Homepage: <a href="<%= homepage %>" target="_blank"><%= homepage %></a></p>
+        <p>Github: <a href="<%= html_url %>" target="_blank"><%= html_url %></a></p>
+      </li>
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.12.0/lodash.js"></script>
+
+    <script src="/js/users-view.js"></script>
+    <script src="/js/repositories-view.js"></script>
+    <script src="/js/page.js"></script>
+
+    <script>GithubBrowser.start();</script>
+
+  </body>
+
+</html>
