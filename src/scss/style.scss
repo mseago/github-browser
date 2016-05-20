@@ -12,8 +12,8 @@ h1 {
 
 @import 'user-view';
 @import 'repository-view';
-
-
+@import "org-view";
+// @import "followers-view";
 
 .user-info {
   float: left;
