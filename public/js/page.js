@@ -4,6 +4,7 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
 (function(context) {
 
   var chosenRepoUrl;
+  var chosenOrgUrl;
 
   function userClicked(repoUrl) {
     console.log('user clicked page.js function', repoUrl);
@@ -31,12 +32,14 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
   }
 
   function organizationsClicked() {
+    console.log('organizationsClicked');
     $('.options .chosen').removeClass('chosen');
     $(this).addClass('chosen');
 
     $('.repositories').hide();
-
+    $('.organizations').show();
     //you have to write the code here for your homework
+    context.OrganizationsView.init(chosenOrgUrl)
   }
 
   function followersClicked() {
