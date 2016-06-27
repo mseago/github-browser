@@ -14,6 +14,10 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
     //reset the page any time a user is clicked
     resetPage();
   }
+  // function userClicked(orgUrl) {
+  //   chosenOrgUrl = orgUrl;
+  //   resetPage();
+  // }
 
   function resetPage() {
     $('.repositories').hide();
@@ -43,12 +47,14 @@ if (this.GithubBrowser === undefined) this.GithubBrowser = {};
   }
 
   function followersClicked() {
+    console.log('followersClicked')
     $('.options .chosen').removeClass('chosen');
     $(this).addClass('chosen');
 
     $('.repositories').hide();
-
+    $('.followers').show();
     //you have to write the code here for your homework
+    context.FollowersView.init(chosenFollUrl);
   }
 
   function start() {
